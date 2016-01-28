@@ -36,7 +36,7 @@ module.exports = {
 			// Писать логи, но не падать
 			errLogToConsole: true
 		},
-		map     : dest + '/css/map'
+		map     : dest + '/map'
 	},
 
 	// Конфиг для autoprefixer
