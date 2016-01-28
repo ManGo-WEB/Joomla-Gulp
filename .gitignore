@@ -1,0 +1,35 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+### OSX template
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Thumbnails
+._*
+
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# IntelliJ project files
+.idea
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+### Sass template
+.sass-cache/
+*.css.map

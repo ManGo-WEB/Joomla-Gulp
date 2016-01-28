@@ -1,0 +1,52 @@
+{
+  "name": "JoomlaGulp",
+  "description": "JoomlaGulp for quick start developing Joomla Theme using Gulp",
+  "version": "1.0.0",
+  "keywords": [
+    "Joomla"
+  ],
+  "maintainers": [
+    {
+      "name": "Alldar",
+      "email": "i@joounit.com",
+      "web": "www.cmscafe.ru"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Alldar/Joomla-Gulp.git"
+  },
+  "bugs": {
+    "web": "https://github.com/Alldar/Joomla-Gulp/issues"
+  },
+  "licenses": [
+    {
+      "name": "GPL",
+      "url": "http://www.gnu.org/licenses/quick-guide-gplv3.en.html"
+    }
+  ],
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-changed": "*",
+    "gulp-combine-mq": "*",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-header": "*",
+    "gulp-imagemin": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "gulp.spritesmith": "*",
+    "require-dir": "*",
+    "gulp-postcss": "*",
+    "postcss-flexbugs-fixes": "*",
+    "postcss-short-font-size": "*",
+    "vinyl-buffer": "*"
+  }
+}
