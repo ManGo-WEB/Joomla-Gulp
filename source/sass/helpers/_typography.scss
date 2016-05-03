@@ -1,0 +1,186 @@
+// Images
+img {
+	max-width      : 100%;
+	height         : auto;
+	vertical-align : top;
+	border         : 0;
+}
+
+svg {
+	max-height : 100%
+}
+
+// Form
+input,
+select,
+textarea,
+fieldset {
+	box-sizing    : border-box;
+	margin-top    : 0;
+	margin-bottom : 0;
+}
+
+select:not([multiple]) {
+	vertical-align : middle;
+}
+
+// Table
+table {
+	border-collapse : separate;
+	border-spacing  : 0;
+	max-width       : 100%;
+	width           : 100%;
+}
+
+th {
+	text-align  : left;
+	font-weight : $table-header-font-weight;
+}
+
+th,
+td {
+	padding     : $table-cell-padding;
+	line-height : inherit;
+}
+
+th {
+	vertical-align : bottom
+}
+
+td {
+	vertical-align : top
+}
+
+// Text
+a {
+	outline         : 0;
+	text-decoration : underline;
+	color           : $link-color;
+	&:hover {
+		color           : $link-color-hover;
+		text-decoration : none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight : $heading-font-weight;
+	line-height : $heading-line-height;
+	margin      : $heading-margin;
+}
+
+p {
+	margin : $paragraph-margin;
+	&:last-child {
+		margin-bottom : 0;
+	}
+}
+
+dl,
+ol,
+ul {
+	margin : $list-margin;
+}
+
+ul {
+	list-style : disc;
+}
+
+ol {
+	list-style : decimal;
+}
+
+h1 {
+	font-size : $h1;
+}
+
+h2 {
+	font-size : $h2;
+}
+
+h3 {
+	font-size : $h3;
+}
+
+h4 {
+	font-size : $h4;
+}
+
+h5 {
+	font-size : $h5;
+}
+
+.text-small {
+	font-size : 14px;
+}
+
+::-moz-focus-inner {
+	border  : 0;
+	padding : 0;
+}
+
+.left-align {
+	text-align : left
+}
+
+.center {
+	text-align : center
+}
+
+.right-align {
+	text-align : right
+}
+
+.justify {
+	text-align : justify
+}
+
+.nowrap {
+	white-space : nowrap
+}
+
+.break-word {
+	word-wrap : break-word
+}
+
+.list-reset {
+	list-style   : none;
+	padding-left : 0;
+}
+
+.overflow-hidden {
+	overflow : hidden
+}
+
+.overflow-scroll {
+	overflow : scroll
+}
+
+.overflow-auto {
+	overflow : auto
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+// Clear for old browser <div class="clr"></div>
+.clr {
+	clear : both;
+}
+
+.left {
+	float : left
+}
+
+.right {
+	float : right
+}
+
+.border-box {
+	box-sizing : border-box
+}
+
+.hidden-box {
+	display    : none;
+	visibility : hidden;
+}

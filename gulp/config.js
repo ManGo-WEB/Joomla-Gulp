@@ -12,6 +12,8 @@ module.exports = {
 		// http://localhost:3001 - UI где все настраивается
 		// Если у вас несколько сетевых карт то имеет смыл указать нужный вам ip ниже, автоматически не всегда верно определятеся
 		host       : '192.168.1.101',
+		// Запрещаем открывать браузер автоматически
+		//open       : false,
 		// Таймаут для релоада в зависимости от скорости FTP, необходимо настроить под себя
 		reloadDelay: 1000,
 		'ui'       : {
@@ -41,6 +43,7 @@ module.exports = {
 
 	// Конфиг для autoprefixer
 	prefix: {
+		flexbox : 'no-2009',
 		// Указываем какие префиксы добавлять согласно caniuse.com
 		browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'iOS 7'],
 		// Выстраивать преффиксы каскадом - нет
@@ -50,21 +53,21 @@ module.exports = {
 	// Конфиг для обработки и сжатия картинки
 	images: {
 		// Следить за этой папкой
-		src : src + '/images/assets/**',
+		src : src + '/images/assets/*.{jpg,png,gif,svg}',
 		// Выгружать при обнаружении сюда
 		dest: dest + '/images'
 	},
 
 	// Конфиг для сборки спрайта (запускать вручную т.к. много ресурсов требует)
-	sprite     : {
+	sprite        : {
 		// Следить за этой папкой
-		src : src + '/images/sprite/*.*',
+		src : src + '/images/sprite/*.{jpg,png,gif}',
 		// Выгружать при обнаружении сюда
 		dest: dest + '/images',
 		// Записать в scss файл стили для спрайта
 		css : src + '/sass/helpers'
 	},
-	spriteParam: {
+	spriteParam   : {
 		// Растоение между изображением в спрайте оно не обходимо из за проблем при зуме в браузере
 		padding  : 5,
 		// Имя файла спрайта
@@ -77,14 +80,14 @@ module.exports = {
 		algorithm: 'binary-tree'
 	},
 	// Конфиг для сборки js
-	js         : {
+	js            : {
 		// Следить за этой папкой
 		src : src + '/js/*.js',
 		// Выгружать при обнаружении сюда
 		dest: dest + 'js'
 	},
 	// Конфиг усиленной углификации js
-	uglify     : {
+	uglify        : {
 		settings: {
 			compress: {
 				sequences   : true,
@@ -99,14 +102,14 @@ module.exports = {
 		}
 	},
 	// Адреса для продакшен файла, у плагина какие то проблемы с переменными, поэтому нужно указать полный путь от корня
-	production : {
+	production    : {
 		// Следить за этим файлом
-		src : "./css/app.css",
+		src : './css/app.css',
 		// Выгружать сюда с преффиксом min
-		dest: "./css"
+		dest: './css'
 	},
 	// Конфиг CSSNano - http://cssnano.co/
-	productionNano : {
+	productionNano: {
 		normalizeUrl     : false,
 		zindex           : false,
 		mergeIdents      : false,

@@ -16,6 +16,8 @@ var config      = require('../config').js;
 var pkg         = require('../../package.json');
 // Подключаем конифг с настройками углификации
 var compress    = require('../config').uglify;
+// Размер файла
+var fileSize    = require('gulp-size');
 // Подключаем browserSync
 var browserSync = require('browser-sync');
 
@@ -44,6 +46,11 @@ gulp.task('js', function () {
 		.pipe(cache(uglify(compress.settings)))
 		// Добавляем наверх баннер с текстом
 		.pipe(header(banner, {pkg: pkg}))
+		// Измеряем размер файла
+		.pipe(fileSize({
+			gzip     : true,
+			showFiles: true
+		}))
 		// Отправляем в папку назначения
 		.pipe(gulp.dest(config.dest))
 		// Даем комманду browserSync обновить js

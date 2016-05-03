@@ -10,8 +10,10 @@ var post         = require('gulp-postcss');
 var prefixer     = require('autoprefixer');
 // Загружаем post-flexbox-fixes - без него можно случайно уранить IE при несоблюдении всех свойств
 var flexboxBug   = require('postcss-flexbugs-fixes');
-// Загружаем post-short-font-size - автоматически сварачивает font-size, line-height, font-weight font-family в font
-var postFontSize = require('postcss-short-font-size');
+// Исправляем градиенты для старых webkit браузеров
+var postGradientFixer = require('postcss-gradientfixer');
+// Добавляем префиксы для новых типов полей
+var postInputStyle = require('postcss-input-style');
 // Не падаем при ошибки
 var handleErrors = require('../util/handleErrors');
 // Загрузка конфига sass
@@ -25,8 +27,10 @@ var processors = [
 	prefixer(configPrefix),
 	// Исправляем баг в флексбоксах
 	flexboxBug,
-	// Сворачиваем свойства семейства font-size, line-height, font-weight font-family в font
-	postFontSize
+	// Исправляем градиенты для старых webkit браузеров
+	postGradientFixer,
+	// Добавляем префиксы для новых типов полей
+	postInputStyle
 ];
 
 
@@ -43,10 +47,9 @@ gulp.task('sass', function () {
 		// Применяем конфиг Post-css
 		.pipe(post(processors))
 		// Пишем карту css в финальный файл,
-		// !!!! Внимание файл может быть с ней очень большим, нужно ее отключать на финальной стадией разработки или использовать Production версию css
 		.pipe(sourcemaps.write(config.map))
 		// Пишем финальный css в папку
 		.pipe(gulp.dest(config.dest))
 		// Даем комманду browserSync обновить css без перезагрузки страницы
-		.pipe(browserSync.reload({stream: true}));
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });

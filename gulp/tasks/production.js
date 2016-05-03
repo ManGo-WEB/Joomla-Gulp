@@ -6,6 +6,8 @@ var rename     = require('gulp-rename');
 var mq         = require('gulp-combine-mq');
 // Подключаем cssnano - сжатие файла
 var nano       = require('gulp-cssnano');
+// Размер файла
+var fileSize     = require('gulp-size');
 // Загружаем конфиг из файла
 var config     = require('../config').production;
 var configNano = require('../config').productionNano;
@@ -21,6 +23,11 @@ gulp.task('producion', function () {
 		// Добавляем префикс .min.css
 		.pipe(rename({
 			suffix: '.min'
+		}))
+		// Измеряем размер файла
+		.pipe(fileSize({
+			gzip     : true,
+			showFiles: true
 		}))
 		// Отправляем в папку назначения
 		.pipe(gulp.dest(config.dest));

@@ -4,6 +4,8 @@ var changed    = require('gulp-changed');
 var gulp       = require('gulp');
 // Подключаем imagemin - сжатие изображение для всех платформ
 var imagemin   = require('gulp-imagemin');
+// Размер файла
+var fileSize     = require('gulp-size');
 // Подключаем конфиг из файла
 var config     = require('../config').images;
 
@@ -15,6 +17,11 @@ gulp.task('images', function() {
 		.pipe(imagemin({
 			// Сжимаем файлы, для jpg прогрессивное сжатие
 			progressive: true
+		}))
+		// Измеряем размер файла
+		.pipe(fileSize({
+			gzip     : true,
+			showFiles: true
 		}))
 		// Выгружаем в папку назначения
 		.pipe(gulp.dest(config.dest));

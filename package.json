@@ -43,10 +43,12 @@
     "gulp-uglify": "*",
     "gulp-watch": "*",
     "gulp.spritesmith": "*",
+    "gulp-size": "*",
     "require-dir": "*",
     "gulp-postcss": "*",
     "postcss-flexbugs-fixes": "*",
-    "postcss-short-font-size": "*",
+    "postcss-gradientfixer": "*",
+    "postcss-input-style": "*",
     "vinyl-buffer": "*"
   }
 }

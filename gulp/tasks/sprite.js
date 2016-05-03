@@ -5,6 +5,8 @@ var spritesmith = require('gulp.spritesmith');
 // Подключаем imagemin - сжатие изображий
 var imagemin    = require('gulp-imagemin');
 var buffer      = require('vinyl-buffer');
+// Размер файла
+var fileSize    = require('gulp-size');
 // Подключаем конифг из файла
 var config      = require('../config').sprite;
 var configParam = require('../config').spriteParam;
@@ -23,7 +25,13 @@ gulp.task('images-sprite', function () {
 			optimizationLevel: 5,
 			progressive      : true,
 			interlaced       : true
-		})).pipe(gulp.dest(config.dest));
+		}))
+		// Измеряем размер файла
+		.pipe(fileSize({
+			gzip     : true,
+			showFiles: true
+		}))
+		.pipe(gulp.dest(config.dest));
 	// Указываем где сохранить файл стилей
 	spriteData.css.pipe(gulp.dest(config.css));
 });
