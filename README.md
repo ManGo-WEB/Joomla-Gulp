@@ -2,10 +2,10 @@
 
 ## Начало работы
 
- 1. Установить [Node.js](https://nodejs.org/en/)
- 2. Для пользователей Windows, *возможно* нужно будет установить [Visual Studio](https://www.visualstudio.com/) и из cmd MSBuild ставить некоторые пакеты если **задачи** gulp не запустятся (при этом установка зависимостей под Windows допускает ошибки т.к. при этом задачи могут нормально работать)
- 3.  Открыть Terminal/PowerShell/CMD установить [gulpjs](http://gulpjs.com/)
- `npm install --global gulp`
+ 1. Установить [Node.js](https://nodejs.org/en/) 4 LTS версию
+ 2. Для пользователей Windows обновить npm до последней версии `npm install --global --production npm-windows-upgrade` затем `npm-windows-upgrade` из под администратора, выбрать последнюю.
+ 3.  Установить [gulpjs](http://gulpjs.com/)
+ `npm install --g gulp` и [browsersync](http://browsersync.io) `npm install -g browser-sync`
  4. В консоли перейти в директорию с проектом с помощью команды `cd путь/до/шаблона`
  5. Запустить команду `npm install --save-dev`
  6. После этого можно запустить дефолтную задачу командой `gulp` (в директории с шаблоном)
