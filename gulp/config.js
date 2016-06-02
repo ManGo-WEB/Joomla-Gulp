@@ -61,7 +61,7 @@ module.exports = {
 	// Конфиг для сборки спрайта (запускать вручную т.к. много ресурсов требует)
 	sprite        : {
 		// Следить за этой папкой
-		src : src + '/images/sprite/*.{jpg,png,gif}',
+		src : src + '/images/sprite/png/*.{jpg,png,gif}',
 		// Выгружать при обнаружении сюда
 		dest: dest + '/images',
 		// Записать в scss файл стили для спрайта
@@ -78,6 +78,40 @@ module.exports = {
 		cssName  : '_sprite.scss',
 		// Алгоритм расположения иконок (top-down, left-right, diagonal, alt-diagonal, binary-tree)
 		algorithm: 'binary-tree'
+	},
+	// Конфиг для сборки SVG спрайта
+	spriteSvg     : {
+		// Следить за этой папкой
+		src   : src + '/images/sprite/svg/*.svg',
+		// Выгружать при обнаружении сюда
+		dest  : dest,
+		config: {
+			dest : '.',
+			log  : 'info',
+			shape: {
+				spacing  : { // Добавляем отступы
+					padding: 0
+				},
+				transform: ['svgo']
+			},
+			dimension       : {
+				precision   : 0 // Плавающая точка
+			},
+			mode : {
+				css   : {
+					dest  : '.',
+					prefix: '.icons-%s', // Префикс класса
+					sprite: '../images/sprite.svg',  // Путь до svg который подставляется в scss
+					bust  : false, // убираем кешбустре в адресе изображения
+					render: {
+						scss: {
+							template: dest + 'source/sprite.scss.handlebars', // путь до шаблона
+							dest    : 'source/sass/helpers/_sprite-svg.scss' // куда сохраниять файл scss
+						}
+					}
+				}
+			}
+		}
 	},
 	// Конфиг для сборки js
 	js            : {
