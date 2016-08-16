@@ -10,6 +10,8 @@ var rename      = require('gulp-rename');
 var cache       = require('gulp-cache');
 // Подключаем header - используется для добаление текста в шапку файла
 var header      = require('gulp-header');
+// Не падаем при ошибки
+var handleErrors      = require('../util/handleErrors');
 // Подключаем конифг из файла
 var config      = require('../config').js;
 // Читаем параметры из package.json
@@ -28,27 +30,36 @@ var banner = [
 	' @author <%= pkg.author %>' +
 	' @version v<%= pkg.version %>' +
 	'External lib: ' +
-	' http://mths.be/placeholder v2.1.1 by @mathias' +
+	// ' jQuery Placeholder Plugin v2.3.1  https://github.com/mathiasbynens/jquery-placeholder Copyright 2011, 2015 Mathias Bynens Released under the MIT license' +
+	// ' FastClick: polyfill to remove click delays on browsers with touch UIs. The Financial Times Limited [All Rights Reserved] MIT License' +
 	' **/'
 ].join('\n');
 
 // Таск сжатия JS
 gulp.task('js', function () {
 	// Перечесление в нужном порядке файлов которые нужно объеденить
-	return gulp.src(['source/js/main.js'])
+	return gulp.src([
+		// 'source/js/lib/jquery.placeholder.js',
+		// 'source/js/lib/fastclick.js',
+		'source/js/main.js'
+		])
 		// Объеденяем в файл app.js
 		.pipe(concat('app.js'))
+		// не даем упасть gulp с ошибкой
+		.on('error', handleErrors)
 		// Кидаем его в папку назначения
 		.pipe(gulp.dest(config.dest))
 		// Создаем новый файл с префиксом .min.js
 		.pipe(rename({suffix: '.min'}))
 		// Сжимаем и делаем углификацию
 		.pipe(cache(uglify(compress.settings)))
+		// не даем упасть gulp с ошибкой
+		.on('error', handleErrors)
 		// Добавляем наверх баннер с текстом
 		.pipe(header(banner, {pkg: pkg}))
 		// Измеряем размер файла
 		.pipe(fileSize({
-			gzip     : true,
+			gzip     : false,
 			showFiles: true
 		}))
 		// Отправляем в папку назначения

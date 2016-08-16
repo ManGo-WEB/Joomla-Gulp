@@ -9,15 +9,12 @@ unset($head['metaTags']['standard']['language']);
 
 // remove core js
 $dontInclude = array(
-	'/media/jui/js/jquery.js',
-	'/media/jui/js/jquery.min.js',
 	'/media/jui/js/jquery-noconflict.js',
 	'/media/jui/js/jquery-migrate.js',
 	'/media/jui/js/jquery-migrate.min.js',
 	'/media/jui/js/bootstrap.js',
 	'/media/system/js/core-uncompressed.js',
 	'/media/system/js/tabs-state.js',
-	'/media/system/js/core.js',
 	'/media/system/js/mootools-core.js',
 	'/media/system/js/mootools-more.js',
 	'/media/jui/js/bootstrap.min.js',

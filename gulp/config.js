@@ -1,22 +1,26 @@
-var dest = './';
-var src  = './source';
+var dest              = './';
+var src               = './source';
+// Время перезагрузки барузера
+var serverReloadDelay = 2000;
 
 module.exports = {
 	// Конфиг для browserSync
 	browserSync: {
 		// Адрес сайта на который нужно кинуть прокси
-		proxy      : 'joomla-test.loc',
+		proxy    : 'norr.loc',
 		// IP в локальной сети используется для открытия на других устройствах например
 		// http://192.168.1.101:3000 - сам сайт,
 		// http://192.168.1.101:9090 - webkit инспектор
 		// http://localhost:3001 - UI где все настраивается
 		// Если у вас несколько сетевых карт то имеет смыл указать нужный вам ip ниже, автоматически не всегда верно определятеся
-		host       : '192.168.1.101',
+		// host : '192.168.1.101',
 		// Запрещаем открывать браузер автоматически
-		//open       : false,
-		// Таймаут для релоада в зависимости от скорости FTP, необходимо настроить под себя
-		reloadDelay: 1000,
-		'ui'       : {
+		open     : false,
+		// Клики, Скрол и Ввод в поля форм отзеркаливаются на всех устройствах подключенных к серверу
+		ghostMode: false,
+		// Перезагружаем сервер при рестарте задачи
+		reloadOnRestart: true,
+		'ui'     : {
 			// Кастомный порт для webkit инспектора, можно использовать любой не занятый
 			'weinre': {
 				'port': 9090
@@ -38,13 +42,17 @@ module.exports = {
 			// Писать логи, но не падать
 			errLogToConsole: true
 		},
-		map     : dest + '/map'
+		// Путь к карте css
+		map     : dest + '/map',
+		// Время перезагрузки страницы это важно когда файл не моментально загружается на сервер
+		delay   : serverReloadDelay
 	},
 
 	// Конфиг для autoprefixer
 	prefix: {
+		// Не поддерживаем flexbox 2009 года (IE9)
 		flexbox : 'no-2009',
-		// Указываем какие префиксы добавлять согласно caniuse.com
+		// Указываем какие префиксы добавлять согласно caniuse.com (для каких браузеров)
 		browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'iOS 7'],
 		// Выстраивать преффиксы каскадом - нет
 		cascade : false
@@ -86,22 +94,22 @@ module.exports = {
 		// Выгружать при обнаружении сюда
 		dest  : dest,
 		config: {
-			dest : '.',
-			log  : 'info',
-			shape: {
-				spacing  : { // Добавляем отступы
-					padding: 0
+			dest     : '.',
+			log      : 'verbose',
+			shape    : {
+				spacing  : { // Добавляем отступы (нужно менять значения в зависимости от css иногда там не целые числа получаются)
+					padding: 1
 				},
 				transform: ['svgo']
 			},
-			dimension       : {
-				precision   : 0 // Плавающая точка
+			dimension: {
+				precision: 0 // Плавающая точка
 			},
-			mode : {
-				css   : {
+			mode     : {
+				css: {
 					dest  : '.',
-					prefix: '.icons-%s', // Префикс класса
-					sprite: '../images/sprite.svg',  // Путь до svg который подставляется в scss
+					prefix: '@mixin svg-%s()', // Префикс класса
+					sprite: dest + 'images/sprite.svg',  // Путь до svg который подставляется в scss
 					bust  : false, // убираем кешбустре в адресе изображения
 					render: {
 						scss: {

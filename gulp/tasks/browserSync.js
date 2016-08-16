@@ -8,5 +8,5 @@ var config      = require('../config').browserSync;
 // Таск для browserSync
 gulp.task('browserSync', function() {
 	// Конфиг
-	browserSync(config);
+	browserSync.init(config);
 });

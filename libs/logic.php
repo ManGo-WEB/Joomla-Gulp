@@ -20,11 +20,5 @@ $doc->setMetadata('viewport', 'width=device-width, initial-scale=1.0');
 // Copyrights
 $doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
 
-// Simplay SEO
-$google_title = '<meta name="google:title" itemprop="name" content="' . $social_title . '" />';
-
-// Load
-$doc->addCustomTag($site_title);
-
 // template css
 $doc->addStyleSheet($tpath . '/css/app.css');

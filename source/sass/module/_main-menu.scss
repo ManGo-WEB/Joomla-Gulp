@@ -1,0 +1,308 @@
+.b-main-menu {
+	position : relative;
+	z-index  : 110;
+	@include clearfix;
+	ul {
+		list-style : none;
+		margin     : 0;
+		padding    : 0;
+		li {
+			position : relative;
+			z-index  : 1;
+			&:hover {
+				z-index : 50;
+				> ul {
+					display   : block;
+					animation : mainMenuDrop .4s ease;
+				}
+			}
+		}
+		&.menu {
+			font-size : 0;
+			> li {
+				font-size          : 19px;
+				display            : inline-block;
+				-webkit-box-sizing : border-box;
+				-moz-box-sizing    : border-box;
+				box-sizing         : border-box;
+				@media screen and (max-width : 1140px) {
+					font-size : 16px;
+				}
+				@media screen and (max-width : 980px) {
+					font-size : 15px;
+				}
+				> a {
+					font-size       : 19px;
+					font-weight     : 400;
+					line-height     : 1;
+					text-decoration : none;
+					color           : #FFF;
+					text-align      : center;
+					display         : block;
+					padding         : 19px 18px 21px;
+					transition      : background .3s ease, color .3s ease, border .3s ease;
+					@media screen and (max-width : 1140px) {
+						font-size : 16px;
+						padding   : 19px 15px 21px;
+					}
+					@media screen and (max-width : 980px) {
+						font-size : 15px;
+						padding   : 19px 10px 21px;
+					}
+				}
+				&.active,
+				&:hover {
+					> a {
+					}
+				}
+				&.parent {
+					> a {
+						span {
+							position      : relative;
+							display       : inline-block;
+							padding-right : 13px;
+							&:after {
+								content      : '';
+								width        : 0;
+								height       : 0;
+								border-style : solid;
+								border-width : 4px 3.5px 0 3.5px;
+								border-color : #FFF rgba(#fff, 0) rgba(#fff, 0) rgba(#fff, 0);
+								position     : absolute;
+								right        : 0;
+								top          : 8px;
+								@media screen and (max-width : 1140px) {
+									top : 6px;
+								}
+								@media screen and (max-width : 980px) {
+									top : 5px;
+								}
+								.no-rgba & {
+									border-color : #FFF transparent transparent transparent;
+								}
+							}
+						}
+					}
+					&:hover {
+						> a {
+							background : #FFF;
+							span {
+								&:after {
+									.no-rgba & {
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.nav-child {
+				box-shadow : 0 3px 6px rgba(0, 0, 0, .25);
+			}
+			ul {
+				position   : absolute;
+				top        : 100%;
+				left       : 0;
+				background : #FFF;
+				min-width  : 322px;
+				display    : none;
+				border-top : 0;
+				ul {
+					top  : 0;
+					left : 100%;
+				}
+				a {
+					display         : block;
+					text-decoration : none;
+					padding         : 10px 12px;
+					background      : #FFF;
+					transition      : background .4s ease, color .4s ease;
+				}
+				li:hover,
+				li.active {
+					> a {
+						background : #EFFEF6;
+					}
+				}
+			}
+		}
+	}
+	&__nav {
+		@media screen and (max-width : 870px) {
+			transform           : translate3d(-150%, 0, 0);
+			transition          : transform .5s ease;
+			backface-visibility : hidden;
+			position            : fixed;
+			top                 : 0;
+			bottom              : 0;
+			width               : 80%;
+			overflow-y          : auto;
+			padding             : 7px 0 25px;
+			&--toolbar {
+				padding : 75px 0 25px;
+			}
+			.overflowscrolling & {
+				overflow-y                 : scroll;
+				-webkit-overflow-scrolling : touch;
+			}
+			.no-csstransforms3d & {
+				transform : translateX(-150%);
+			}
+			.no-csstransforms3d.no-csstransforms & {
+				left : -150%;
+			}
+			body.is-offcanvas & {
+				left      : 0;
+				transform : translate3d(0, 0, 0);
+			}
+
+			.no-csstransforms3d body.is-offcanvas & {
+				left      : 0;
+				transform : translateX(0);
+			}
+			.no-csstransforms3d.no-csstransforms body.is-offcanvas & {
+				left : 0;
+			}
+			ul.menu {
+				margin     : 0;
+				padding    : 0;
+				list-style : none;
+				border-top : 1px solid #D4D4D4;
+				li {
+					border-top : 1px solid #D4D4D4;
+					&:first-child {
+						border-top : 0;
+					}
+				}
+				a {
+					padding         : 13px 15px;
+					text-decoration : none;
+					color           : #3C3C3C;
+					font-size       : 16px;
+					font-weight     : 700;
+					display         : block;
+					&:hover {
+					}
+				}
+				ul {
+					margin     : 0;
+					padding    : 0 0 0 10px;
+					list-style : none;
+					border-top : 1px solid #D4D4D4;
+					li {
+						border : 0;
+					}
+					a {
+						font-weight : 400;
+						padding     : 10px 16px;
+					}
+				}
+				li.parent > a {
+					padding-right : 38px;
+					position      : relative;
+				}
+				li.active > a {
+				}
+			}
+		}
+	}
+	&__menu {
+		float           : left;
+		width           : 60px;
+		height          : 60px;
+		color           : #FFF;
+		text-decoration : none;
+		position        : relative;
+		overflow        : hidden;
+		opacity         : 1;
+		display         : none;
+		visibility      : hidden;
+		@media screen and (max-width : 870px) {
+			display    : block;
+			visibility : visible;
+		}
+		&:after,
+		&:before {
+			content    : '';
+			width      : 30px;
+			height     : 4px;
+			background : #FFF;
+			display    : block;
+			position   : absolute;
+			top        : 50%;
+			transform  : rotate(0deg);
+			transition : transform .3s ease, margin .3s ease;
+		}
+		&:before {
+			margin-top : -10px;
+		}
+		&:after {
+			margin-top : 6px;
+		}
+		span {
+			width      : 30px;
+			height     : 4px;
+			background : #FFF;
+			display    : block;
+			position   : absolute;
+			top        : 50%;
+			margin-top : -2px;
+			@extend %hide-text;
+			transition : opacity .3s ease, transform .3s ease;
+		}
+		&.is-active {
+			&:before {
+				transform  : rotate(45deg);
+				margin-top : 0;
+			}
+			&:after {
+				transform  : rotate(-45deg);
+				margin-top : 0;
+			}
+			span {
+				opacity   : 0;
+				transform : translate3d(-100%, 0, 0);
+			}
+		}
+	}
+	&__close {
+		@extend %hide-text;
+		position : absolute;
+		display  : block;
+		width    : 60px;
+		height   : 60px;
+		top      : 0;
+		right    : 0;
+		&:after,
+		&:before {
+			content    : '';
+			width      : 30px;
+			height     : 4px;
+			margin-top : 0;
+			left       : 15px;
+			background : #3C3C3C;
+			display    : block;
+			position   : absolute;
+			top        : 50%;
+			transform  : rotate(0deg);
+			transition : transform .3s ease, margin .3s ease;
+		}
+		&:before {
+			transform : rotate(45deg);
+		}
+		&:after {
+			transform : rotate(-45deg);
+		}
+	}
+}
+
+@keyframes mainMenuDrop {
+	0% {
+		opacity   : 0;
+		transform : translateY(-10%) scale(0.99);
+	}
+	100% {
+		opacity   : 1;
+		transform : translateY(0%) scale(1);
+	}
+}

@@ -670,7 +670,7 @@ button {
 }
 // animate in
 .modal-animation.mfp-ready.mfp-bg {
-	opacity: 0.95;
+	opacity: $mfp-overlay-opacity;
 }
 // animate out
 .modal-animation.mfp-removing.mfp-bg {

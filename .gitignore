@@ -33,3 +33,5 @@ node_modules
 ### Sass template
 .sass-cache/
 *.css.map
+css/app.css
+source/js/lib/
