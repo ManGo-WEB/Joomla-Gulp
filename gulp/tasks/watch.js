@@ -23,4 +23,11 @@ gulp.task('watch', ['browserSync'], function() {
 
 	// Отслеживаем измения в php файлах и перезагружаем страницу
 	watch('./**/*.php').on('change', browserSync.reload);
+
+	// Отслеживаем измения в  css файлах и инклюдим их без перезагрузки страницы
+	browserSync.watch('./css/*.css', function (event, file) {
+		if (event === 'change') {
+			setTimeout(function(){ browserSync.reload('*.css'); }, config.sass.delay);
+		}
+	});
 });

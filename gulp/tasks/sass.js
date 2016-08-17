@@ -52,9 +52,5 @@ gulp.task('sass', function () {
 		// Пишем карту css в финальный файл,
 		.pipe(sourcemaps.write(config.map))
 		// Пишем финальный css в папку
-		.pipe(gulp.dest(config.dest))
-		// Ждем перед перезагрузкой стилей если это нужно
-		.pipe(wewait(config.delay))
-		// Даем комманду browserSync обновить css без перезагрузки страницы
-		.pipe(browserSync.stream({match: '**/*.css'}));
+		.pipe(gulp.dest(config.dest));
 });
