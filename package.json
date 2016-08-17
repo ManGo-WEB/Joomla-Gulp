@@ -30,7 +30,6 @@
 	"gulp"                   : "*",
 	"gulp-autoprefixer"      : "*",
 	"gulp-cache"             : "*",
-	"gulp-cached"            : "*",
 	"gulp-changed"           : "*",
 	"gulp-combine-mq"        : "*",
 	"gulp-concat"            : "*",
