@@ -16,10 +16,12 @@ var configSvg   = require('../config').spriteSvg;
 
 // Таск создания спрайтов
 gulp.task('sprite-images', function () {
+	'use strict';
 	var spriteData =
 		    gulp.src(config.src)
 			    // Настройки https://github.com/twolfson/gulp.spritesmith
 			    .pipe(spritesmith(configParam));
+
 	// Сжимаем файлы изобржения, затем располагаем в месте назначения
 	spriteData.img
 		// Достает из потока для imagemin
@@ -35,11 +37,13 @@ gulp.task('sprite-images', function () {
 			showFiles: true
 		}))
 		.pipe(gulp.dest(config.dest));
+
 	// Указываем где сохранить файл стилей
 	spriteData.css.pipe(gulp.dest(config.css));
 });
 
 gulp.task('sprite-svg', function () {
+	'use strict';
 	gulp.src(configSvg.src)
 		.pipe(svgSprite(configSvg.config))
 		.pipe(gulp.dest(configSvg.dest));

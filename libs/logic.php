@@ -1,16 +1,16 @@
 <?php defined('_JEXEC') or die;
 
 // variables
-$app = JFactory::getApplication();
-$doc = JFactory::getDocument();
-$menu = $app->getMenu();
-$active = $app->getMenu()->getActive();
-$params = $app->getParams();
-$pageclass = $params->get('pageclass_sfx');
-$url = rtrim(JUri::base(), '/');
-$tpath = $url . '/templates/' . $this->template;
-$option = $app->input->getCmd('option', '');
-$view = $app->input->getCmd('view', '');
+$app          = JFactory::getApplication();
+$doc          = JFactory::getDocument();
+$menu         = $app->getMenu();
+$active       = $app->getMenu()->getActive();
+$params       = $app->getParams();
+$pageclass    = $params->get('pageclass_sfx');
+$url          = rtrim(JUri::base(), '/');
+$tpath        = $url . '/templates/' . $this->template;
+$option       = $app->input->getCmd('option', '');
+$view         = $app->input->getCmd('view', '');
 $social_title = $doc->getTitle();
 
 // New meta

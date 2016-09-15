@@ -1,4 +1,4 @@
-<?php defined( '_JEXEC' ) or die;
+<?php defined('_JEXEC') or die;
 // get html head data
 $head = $doc->getHeadData();
 // remove deprecated meta-data (html5)
@@ -24,6 +24,6 @@ $dontInclude = array(
 
 foreach ($doc->_scripts as $key => $script) {
 	if (in_array($key, $dontInclude)) {
-		unset($doc->_scripts[$key]);
+		unset($doc->_scripts[ $key ]);
 	}
 }

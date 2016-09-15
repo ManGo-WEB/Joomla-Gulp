@@ -14,6 +14,7 @@ var configNano = require('../config').productionNano;
 
 // Таск сжатия css для продакшена
 gulp.task('producion', function () {
+	'use strict';
 	// Указываем файл с которым работаем
 	return gulp.src(config.src)
 		// Объеденяем все одинаковые медиа запросы
@@ -26,7 +27,7 @@ gulp.task('producion', function () {
 		}))
 		// Измеряем размер файла
 		.pipe(fileSize({
-			gzip     : true,
+			gzip     : false,
 			showFiles: true
 		}))
 		// Отправляем в папку назначения

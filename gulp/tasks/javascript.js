@@ -37,6 +37,7 @@ var banner = [
 
 // Таск сжатия JS
 gulp.task('js', function () {
+	'use strict';
 	// Перечесление в нужном порядке файлов которые нужно объеденить
 	return gulp.src([
 		// 'source/js/lib/jquery.placeholder.js',
@@ -70,5 +71,6 @@ gulp.task('js', function () {
 
 // Очистка кеша файлов иногда при смене локации пишется все еще старый путь
 gulp.task('clear-cache', function (done) {
+	'use strict';
 	return cache.clearAll(done);
 });

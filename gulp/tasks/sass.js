@@ -4,8 +4,6 @@ var gulp              = require('gulp');
 var css2sass          = require('gulp-sass');
 // Подключаем css карта для браузера
 var sourcemaps        = require('gulp-sourcemaps');
-// Подключаем css карта для браузера
-var wewait            = require('gulp-wait');
 // Загружаем post-css
 var post              = require('gulp-postcss');
 // Загрузка autoprefixer
@@ -22,8 +20,6 @@ var handleErrors      = require('../util/handleErrors');
 var config            = require('../config').sass;
 // Загрузка конфига autoprefixer
 var configPrefix      = require('../config').prefix;
-// Подключаем browserSync
-var browserSync       = require('browser-sync');
 
 // Создаем конфиг для post-css
 var processors = [
@@ -39,6 +35,7 @@ var processors = [
 
 // Таск по сборке Sass
 gulp.task('sass', function () {
+	'use strict';
 	// Указываем откуда читать scss файлы
 	return gulp.src(config.src)
 	// Инициализируем css карту

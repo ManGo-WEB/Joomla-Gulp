@@ -11,6 +11,7 @@ var config     = require('../config').images;
 
 // Таск сжатия изображений
 gulp.task('images', function() {
+	'use strict';
 	// Обращаемся в папку с исходниками
 	return gulp.src(config.src)
 		.pipe(changed(config.dest)) // Проверяет изменения в финальной папке

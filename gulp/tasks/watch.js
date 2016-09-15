@@ -8,6 +8,8 @@ var browserSync = require('browser-sync');
 
 // Ватчеры +  стартуем browserSync
 gulp.task('watch', ['browserSync'], function() {
+	'use strict';
+
 	// Sass
 	watch(config.sass.watch, function() {
 		gulp.start('sass');
