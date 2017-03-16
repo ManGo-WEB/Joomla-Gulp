@@ -1,0 +1,1 @@
+$('input[type="number"]').not('.not-styled').styler();

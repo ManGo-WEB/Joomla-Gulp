@@ -3,6 +3,18 @@
 @import "helpers/config-main";
 @import "helpers/mixins";
 @import "helpers/classes";
+@import "helpers/normalize";
+@import "helpers/typography";
+@import "helpers/sprite-svg";
+@import "helpers/sprite";
 
-// Layout
-@import "view/page";
+// Vendors
+@import "vendors/grid";
+@import "vendors/inputs";
+@import "vendors/buttons";
+@import "vendors/form";
+@import "vendors/alert";
+@import "vendors/magnific";
+
+// View
+@import "view/error-page";

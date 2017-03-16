@@ -1,0 +1,43 @@
+<form action="index.html" class="b-form">
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-name">Вашe имя</label>
+		<input type="text" id="form-name" class="success">
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-password">Ваш пароль</label>
+		<!-- Блок ошибки -->
+		<input type="password" id="form-password" value="password" class="error">
+		<div class="b-form__error">
+			Обязательное поле
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-password2">Подтвердите ваш пароль</label>
+		<!-- Блок ошибки тип 2 -->
+		<input type="password" id="form-password2" value="pass" class="error">
+		<div class="b-form__error type-2">
+			Обязательное поле тип 2
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-text">Ваше сообщение</label>
+		<textarea name="form-text" id="form-text" cols="30" rows="10"></textarea>
+		<!-- Блок описания -->
+		<div class="b-form__hint">
+			Описание поля
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<button type="submit" class="b-btn red">
+			Отправить
+		</button>
+		<button type="reset" class="b-btn link">
+			Отменить
+		</button>
+	</div>
+</form>

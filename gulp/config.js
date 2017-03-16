@@ -7,7 +7,7 @@ module.exports = {
 	// Конфиг для browserSync
 	browserSync: {
 		// Адрес сайта на который нужно кинуть прокси
-		proxy          : 'norr.loc',
+		server          : 'test.loc',
 		// IP в локальной сети используется для открытия на других устройствах например
 		// http://192.168.1.101:3000 - сам сайт,
 		// http://192.168.1.101:9090 - webkit инспектор
@@ -149,22 +149,5 @@ module.exports = {
 		src : './css/app.css',
 		// Выгружать сюда с преффиксом min
 		dest: './css'
-	},
-	// Конфиг CSSNano - http://cssnano.co/
-	productionNano: {
-		normalizeUrl     : false,
-		zindex           : false,
-		mergeIdents      : false,
-		reduceIdents     : false,
-		minifyFontValues : false,
-		discardComments  : true,
-		discardEmpty     : true,
-		discardDuplicates: true,
-		normalizeCharset : true,
-		mergeLonghand    : true,
-		autoprefixer     : false,
-		minifySelectors  : true,
-		convertValues    : false,
-		discardUnused    : false
 	}
 };

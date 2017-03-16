@@ -1,5 +1,8 @@
 <?php defined('_JEXEC') or die;
 
+// Add jQuery
+JHtml::_('jquery.framework', false);
+
 // variables
 $app          = JFactory::getApplication();
 $doc          = JFactory::getDocument();
@@ -22,3 +25,4 @@ $doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
 
 // template css
 $doc->addStyleSheet($tpath . '/css/app.css');
+$doc->addScript($tpath . '/css/app..min.js');

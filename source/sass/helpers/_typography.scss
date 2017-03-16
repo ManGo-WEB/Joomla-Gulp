@@ -10,16 +10,6 @@ svg {
 	max-height : 100%
 }
 
-// Form
-input,
-select,
-textarea,
-fieldset {
-	box-sizing    : border-box;
-	margin-top    : 0;
-	margin-bottom : 0;
-}
-
 select:not([multiple]) {
 	vertical-align : middle;
 }
@@ -82,7 +72,32 @@ ul {
 }
 
 ul {
-	list-style : disc;
+	margin-left  : 0;
+	padding-left : 0;
+	list-style   : none;
+	ul {
+		margin-left : 25px;
+	}
+	li {
+		display      : block;
+		padding-left : 23px;
+		position     : relative;
+		margin-top   : 5px;
+		&:first-child {
+			margin-top : 0;
+		}
+		&:after {
+			content          : '';
+			position         : absolute;
+			top              : 50%;
+			left             : 0;
+			border-radius    : 50%;
+			margin-top       : -($list-size / 2);
+			width            : $list-size;
+			height           : $list-size;
+			background-color : $list-color;
+		}
+	}
 }
 
 ol {
@@ -109,8 +124,16 @@ h5 {
 	font-size : $h5;
 }
 
+hr {
+	margin     : 1em 0;
+	display    : block;
+	height     : 1px;
+	background : #DBDBDB;
+	border     : 0;
+}
+
 .text-small {
-	font-size : 14px;
+	font-size : $text-small;
 }
 
 ::-moz-focus-inner {
@@ -168,19 +191,72 @@ h5 {
 	clear : both;
 }
 
-.left {
+.float-left {
 	float : left
 }
 
-.right {
+.float-right {
 	float : right
 }
 
 .border-box {
-	box-sizing : border-box
+	-webkit-box-sizing : border-box;
+	-moz-box-sizing    : border-box;
+	box-sizing         : border-box;
 }
 
 .hidden-box {
 	display    : none;
 	visibility : hidden;
+}
+
+.mt {
+	margin-top : $space-1;
+}
+
+.mb {
+	margin-bottom : $space-1;
+}
+
+.mt2 {
+	margin-top : $space-2;
+}
+
+.mb2 {
+	margin-bottom : $space-2;
+}
+
+.mt3 {
+	margin-top : $space-3;
+}
+
+.mb3 {
+	margin-bottom : $space-3;
+}
+
+mark {
+	background-color : rgba(255, 255, 0, .29);
+	padding          : 1px 5px;
+	display          : inline-block;
+}
+
+.b-back-link {
+	text-decoration : none;
+	span {
+		text-decoration : underline;
+	}
+	&:hover {
+		text-decoration : none;
+		span {
+			text-decoration : none;
+		}
+	}
+}
+
+.b-hero-block {
+	color         : $body-color;
+	background    : $body-background;
+	padding       : $body-padding;
+	box-shadow    : $body-shadow;
+	border-radius : $body-radius;
 }

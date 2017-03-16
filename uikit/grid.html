@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>UIKit</title>
+	<link rel="stylesheet" href="../css/app.css">
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../js/app.min.js"></script>
+	<!-- Demo стили -->
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<script src="js/prism.js"></script>
+	<script src="js/demo.js"></script>
+</head>
+<body>
+<header class="demo-header">
+	<div class="wrapper">
+		<a href="index.html" class="demo-logo">
+			UIKit
+		</a>
+		<h1 class="demo-header__title">
+			Сетка
+		</h1>
+	</div>
+</header>
+<div class="wrapper">
+	<nav class="demo-aside">
+		<ul>
+			<li>
+				<a href="index.html">Формы</a>
+			</li>
+			<li class="active">
+				<a href="grid.html">Сетка</a>
+			</li>
+			<li>
+				<a href="typo.html">Типографика</a>
+			</li>
+			<li>
+				<a href="404.html">404 страница</a>
+			</li>
+			<li>
+				<a href="components.html">Компоненты</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="demo-main">
+		<div class="demo-row" id="link-buttons">
+			<h2 class="demo-title">
+				Сетка
+			</h2>
+			<div class="demo-info">
+				<p>
+					Сетка состоит из двух частей:
+				</p>
+				<p>
+					Обертка - <mark>.b-grid</mark>, класс <mark>cols-2</mark>, <mark>cols-3</mark>, <mark>cols-4</mark> указывают количество колонок
+				</p>
+				<p>
+					Ячейка - <mark>.b-grid__item</mark>
+				</p>
+				<p>
+					Сетка может быть вложена друг в друга
+				</p>
+				<p>
+					Файл стиля:
+				</p>
+				<p>
+					<code>source/sass/helpers/_grid.scss</code>
+				</p>
+			</div>
+			<div class="demo-test">
+				<div class="b-grid cols-2">
+					<div class="b-grid__item">
+						<div class="demo-grid"></div>
+					</div>
+					<div class="b-grid__item">
+						<div class="demo-grid"></div>
+					</div>
+					<div class="b-grid__item">
+						<div class="b-grid cols-2">
+							<div class="b-grid__item">
+								<div class="demo-grid"></div>
+							</div>
+							<div class="b-grid__item">
+								<div class="demo-grid"></div>
+							</div>
+						</div>
+					</div>
+					<div class="b-grid__item">
+						<div class="demo-grid"></div>
+					</div>
+					<div class="b-grid cols-3">
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+					</div>
+					<div class="b-grid cols-4">
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+						<div class="b-grid__item">
+							<div class="demo-grid"></div>
+						</div>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/grid.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

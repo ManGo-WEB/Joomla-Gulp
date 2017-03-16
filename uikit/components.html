@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>UIKit</title>
+	<link rel="stylesheet" href="../css/app.css">
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../js/app.min.js"></script>
+	<!-- Demo стили -->
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<script src="js/prism.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/messages_ru.min.js"></script>
+	<script>
+		(function ($) {
+			$(function () {
+				$('[data-validation="type1"]').each(function () {
+					var currentForm = $(this),
+					    formSubmit  = currentForm.find('[type="submit"]'),
+					    formMassege = currentForm.find('.b-form__error-placeholder');
+					$(this).validate({
+						errorElement  : 'div',
+						errorPlacement: function (error, element) {
+							$(element).closest('.b-form__row').append(error);
+						},
+						errorClass    : 'b-form__error',
+						showErrors    : function (errorMap, errorList) {
+							this.defaultShowErrors();
+						},
+						highlight     : function (element) {
+							$(element).addClass('error').removeClass('success');
+						},
+						unhighlight   : function (element) {
+							$(element).removeClass('error').addClass('success');
+						},
+						submitHandler : function (form) {
+							formSubmit.addClass('loading');
+							$.ajax({
+								type   : 'POST',
+								data   : currentForm.serialize(),
+								success: function (response) {
+									if (response === 'OK') {
+										formMassege.html('<div class="b-alert success">Сообщение отправлено</div>');
+										currentForm.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+										currentForm.find('.focused').removeClass('focused');
+									} else {
+										formMassege.html('<div class="b-alert error">Ошибка при отправке сообшения</div>');
+									}
+									formSubmit.removeClass('loading');
+								},
+								error  : function () {
+									formMassege.html('<div class="b-alert error">Ошибка при отправке сообшения</div>');
+									formSubmit.removeClass('loading');
+								}
+							});
+						}
+					});
+				});
+				$('[data-validation="type2"]').each(function () {
+					var currentForm = $(this),
+					    formSubmit  = currentForm.find('[type="submit"]'),
+					    formMassege = currentForm.find('.b-form__error-placeholder');
+					$(this).validate({
+						errorElement  : 'div',
+						errorPlacement: function (error, element) {
+							$(element).closest('.b-form__row').append(error);
+						},
+						errorClass    : 'b-form__error type-2',
+						showErrors    : function (errorMap, errorList) {
+							this.defaultShowErrors();
+						},
+						highlight     : function (element) {
+							$(element).addClass('error').removeClass('success');
+						},
+						unhighlight   : function (element) {
+							$(element).removeClass('error').addClass('success');
+						},
+						submitHandler : function (form) {
+							formSubmit.addClass('loading');
+							$.ajax({
+								type   : 'POST',
+								data   : currentForm.serialize(),
+								success: function (response) {
+									if (response === 'OK') {
+										formMassege.html('<div class="b-alert success">Сообщение отправлено</div>');
+										currentForm.not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+										currentForm.find('.focused').removeClass('focused');
+									} else {
+										formMassege.html('<div class="b-alert error">Ошибка при отправке сообшения</div>');
+									}
+									formSubmit.removeClass('loading');
+								},
+								error  : function () {
+									formMassege.html('<div class="b-alert error">Ошибка при отправке сообшения</div>');
+									formSubmit.removeClass('loading');
+								}
+							});
+						}
+					});
+				});
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+<header class="demo-header">
+	<div class="wrapper">
+		<a href="index.html" class="demo-logo">
+			UIKit
+		</a>
+		<h1 class="demo-header__title">
+			Компоненты
+		</h1>
+	</div>
+</header>
+<div class="wrapper">
+	<nav class="demo-aside">
+		<ul>
+			<li>
+				<a href="index.html">Формы</a>
+			</li>
+			<li>
+				<a href="grid.html">Сетка</a>
+			</li>
+			<li>
+				<a href="typo.html">Типографика</a>
+			</li>
+			<li>
+				<a href="404.html">404 страница</a>
+			</li>
+			<li class="active">
+				<a href="components.html">Компоненты</a>
+				<ul>
+					<li>
+						<a href="#link-list">
+							Список скриптов и документация к ним
+						</a>
+					</li>
+					<li>
+						<a href="#link-validation">
+							Валидация форм
+						</a>
+					</li>
+					<li>
+						<a href="#link-mask">
+							Маска для инпутов
+						</a>
+					</li>
+					<li>
+						<a href="#link-modal">
+							Модальные окна
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class="demo-main">
+		<div class="demo-row" id="link-list">
+			<h2 class="demo-title">
+				Список скриптов и документация к ним
+			</h2>
+			<p>
+				<strong>Оформление форм:</strong>
+			</p>
+			<p>
+				<a href="https://github.com/Dimox/jQueryFormStyler" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">jQuery Form Styler</a>
+				<a href="http://dimox.name/jquery-form-styler/" target="_blank" rel="nofollow" class="b-btn green big">Документация</a>
+			</p>
+			<p id="form-validation">
+				<strong>Валидация форм:</strong>
+			</p>
+			<p>
+				<a href="https://jqueryvalidation.org/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">Jquery Validation</a>
+				<a href="https://jqueryvalidation.org/documentation/" target="_blank" rel="nofollow"
+				   class="b-btn green big">Документация</a>
+			</p>
+			<p id="form-mask">
+				<strong>Маска для инпутов:</strong>
+			</p>
+			<p>
+				<a href="https://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">jQuery Mask Plugin</a>
+				<a href="https://github.com/igorescobar/jQuery-Mask-Plugin/" target="_blank" rel="nofollow"
+				   class="b-btn green big">Документация</a>
+			</p>
+			<p>
+				<strong>Слайдер IE10+:</strong>
+			</p>
+			<p>
+				<a href="http://idangero.us/swiper/" target="_blank" rel="nofollow" class="b-btn link big demo-script">Swiper</a>
+				<a href="http://idangero.us/swiper/api/" target="_blank" rel="nofollow" class="b-btn green big">Документация</a>
+			</p>
+			<p>
+				<strong>Слайдер IE8+:</strong>
+			</p>
+			<p>
+				<a href="http://owlcarousel2.github.io/OwlCarousel2/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">Owl Carousel 2</a>
+				<a href="http://owlcarousel2.github.io/OwlCarousel2/docs/started-welcome.html" target="_blank"
+				   rel="nofollow" class="b-btn green big">Документация</a>
+			</p>
+			<p id="form-modal">
+				<strong>Модальное окно:</strong>
+			</p>
+			<p>
+				<a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">Magnific Popup</a>
+				<a href="http://dimsemenov.com/plugins/magnific-popup/documentation.html" target="_blank" rel="nofollow"
+				   class="b-btn green big">Документация</a>
+			</p>
+			<p>
+				<strong>Закрепление блока при скролинге:</strong>
+			</p>
+			<p>
+				<a href="http://leafo.net/sticky-kit/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">Sticky Kit</a>
+				<a href="http://leafo.net/sticky-kit/#reference" target="_blank" rel="nofollow" class="b-btn green big">Документация</a>
+			</p>
+			<p>
+				<strong>Социальные лайки:</strong>
+			</p>
+			<p>
+				<a href="http://social-likes.js.org/ru/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">Social Likes</a>
+				<a href="https://github.com/sapegin/social-likes/blob/master/Readme.md" target="_blank" rel="nofollow"
+				   class="b-btn green big">Документация</a>
+			</p>
+			<p>
+				<strong>Кастомный скролбар:</strong>
+			</p>
+			<p>
+				<a href="http://manos.malihu.gr/jquery-custom-content-scroller/" target="_blank" rel="nofollow"
+				   class="b-btn link big demo-script">jQuery custom scroller</a>
+				<a href="http://manos.malihu.gr/jquery-custom-content-scroller/" target="_blank" rel="nofollow"
+				   class="b-btn green big">Документация</a>
+			</p>
+		</div>
+		<div class="demo-row" id="link-validation">
+			<h2 class="demo-title">
+				Валидация формы
+			</h2>
+			<div class="demo-info">
+				<p>
+					Скрипт
+					<mark><a href="#form-validation">jQuery Form Styler</a></mark>
+				</p>
+				<p>
+					Подключается отдельно
+				</p>
+			</div>
+
+			<div class="demo-test">
+				<form action="components.html" class="b-form" data-validation="type1">
+					<!-- Блок для отображения сообщения -->
+					<div class="b-form__error-placeholder"></div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<!-- Контейнер для плавающего лейбла -->
+						<div class="b-form__float-label">
+							<label for="form-name-float">Вашe имя</label>
+							<input type="text" id="form-name-float" data-rule-minlength="10" data-rule-required="true"
+							       data-msg-minlength="Введите больше 10 знаков"
+							       data-msg-required="Пожалуйста введите ваше имя." required>
+						</div>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<!-- Контейнер для плавающего лейбла -->
+						<div class="b-form__float-label">
+							<label for="form-password-float">Ваш email</label>
+							<input type="email" id="form-password-float" data-rule-email="true"
+							       data-rule-required="true" data-msg-email="Пожалуйста заполните email корректно."
+							       required>
+						</div>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<!-- Контейнер для плавающего лейбла -->
+						<div class="b-form__float-label">
+							<label for="form-text-float">Ваше сообщение</label>
+							<textarea name="form-text" id="form-text-float" cols="30" rows="10"
+							          data-rule-required="true" data-msg-required="Пожалуйста заполните сообщение."
+							          required></textarea>
+						</div>
+						<!-- Блок описания -->
+						<div class="b-form__hint">
+							Описание поля
+						</div>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<button type="submit" class="b-btn red">
+							Отправить
+						</button>
+						<button type="reset" class="b-btn link">
+							Отменить
+						</button>
+					</div>
+				</form>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/valid-1.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/valid-1.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="demo-test">
+				<p>Валидация - тип ошибок 2</p>
+				<form action="index.html" class="b-form" data-validation="type2">
+					<!-- Блок для отображения сообщения -->
+					<div class="b-form__error-placeholder"></div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<label for="form-name">Вашe имя</label>
+						<input type="text" id="form-name" data-rule-minlength="10" data-rule-required="true"
+						       data-msg-minlength="Введите больше 10 знаков"
+						       data-msg-required="Пожалуйста введите ваше имя." required>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<label for="form-email">Ваш пароль</label>
+						<!-- Блок ошибки -->
+						<input type="email" id="form-email" data-rule-email="true"
+						       data-rule-required="true" data-msg-email="Пожалуйста заполните email корректно."
+						       required>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<label for="form-text">Ваше сообщение</label>
+						<textarea name="form-text" id="form-text" cols="30" rows="10" data-rule-required="true"
+						          data-msg-required="Пожалуйста заполните сообщение."
+						          required></textarea>
+					</div>
+					<!-- Строка формы -->
+					<div class="b-form__row">
+						<button type="submit" class="b-btn red">
+							Отправить
+						</button>
+						<button type="reset" class="b-btn link">
+							Отменить
+						</button>
+					</div>
+				</form>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/valid-2.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/valid-2.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="demo-row" id="link-mask">
+			<h2 class="demo-title">
+				Маска для ипутов
+			</h2>
+			<div class="demo-info">
+				<p>
+					Скрипт
+					<mark><a href="#form-mask">jQuery Mask Plugin</a></mark>
+				</p>
+			</div>
+			<p>
+				<input type="text" class="phone-mask">
+			</p>
+			<div class="demo-code">
+				<p>
+					<a href="#" class="demo-code__link">Показать код js</a>
+				</p>
+				<div class="demo-code__wrapper">
+					<pre data-src="example/form-mask.js" data-start="1" data-type="text/js"></pre>
+				</div>
+			</div>
+			<div class="demo-code">
+				<p>
+					<a href="#" class="demo-code__link">Показать код html</a>
+				</p>
+				<div class="demo-code__wrapper">
+					<pre data-src="example/form-mask.html" data-start="1" data-type="text/html"></pre>
+				</div>
+			</div>
+		</div>
+		<div class="demo-row" id="link-modal">
+			<h2 class="demo-title">
+				Модальные окна
+			</h2>
+			<div class="demo-info">
+				<p>
+					Скрипт
+					<mark><a href="#form-modal">Magnific Popup</a></mark>
+				</p>
+				<p>
+					Стили
+					<code>source/sass/vendors/_magnific.scss</code>
+				</p>
+				<p>
+					Активируются атрибутами
+				</p>
+				<p>
+					<mark>data-lightbox="inline"</mark>
+					- инлайн модальное окно, применяется на тег a где href="id" его цель
+				</p>
+				<p>
+					<mark>data-lightbox="ajax"</mark>
+					- ajax модальное окно, применяется на тег a где href="адрес" его цель
+				</p>
+				<p>
+					<mark>data-lightbox="iframe"</mark>
+					- внешний iframe загружается в модальное окно, применяется на тег a где href="адрес" его цель
+				</p>
+				<p>
+					<mark>data-lightbox="image"</mark>
+					- еденичное изображение, применяется на тег a где href="адрес" его цель
+				</p>
+				<p>
+					<mark>data-lightbox="gallery"</mark>
+					- галерея изображений, применяется на тег родительский тег и делегируется всем тегам a внутри него
+				</p>
+			</div>
+			<div class="demo-test">
+				<a href="#modal-text" data-lightbox="inline" class="b-btn green big">Открыть инлайн окно</a>
+				<div class="hidden-box">
+					<div id="modal-text">
+						<form action="components.html" class="b-form" data-validation="type-2">
+							<div class="b-form__row">
+								<label for="test-name">Ваше имя</label>
+								<input type="text" id="test-name" class="big" required>
+							</div>
+							<div class="b-form__row">
+								<label for="test-phone">Ваш телефон</label>
+								<input type="text" id="test-phone" class="big phone-mask" required>
+							</div>
+							<div class="b-form__row">
+								<button type="submit" class="b-btn red big full-size">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/inline.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/inline.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="demo-test">
+				<a href="test/ajax-modal.html" data-lightbox="ajax" class="b-btn green big">Открыть AJAX окно</a>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/ajax.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/ajax.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="demo-test">
+				<a href="https://docs.google.com/viewer?url=http://art-talant.org/components/com_mtree/attachments/121/121085/239682.doc&amp;embedded=true" data-lightbox="iframe" class="b-btn green big">Открыть IFRAME окно</a>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/iframe.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/iframe.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="demo-test">
+				<p>
+					Одиночное изображение
+				</p>
+				<a data-lightbox="image" href="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg">
+					<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75">
+				</a>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/image.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/image.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="demo-test">
+				<p>
+					Галерея изображений
+				</p>
+				<div data-lightbox="gallery">
+					<a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_b.jpg" title="The Shake"><img src="http://farm9.staticflickr.com/8235/8558295467_e89e95e05a_s.jpg" width="75" height="75"></a>
+					<a href="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg" title="Who's that, mommy?"><img src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" width="75" height="75"></a>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код js</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/gallery.js" data-start="1" data-type="text/js"></pre>
+					</div>
+				</div>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код html</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/gallery.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

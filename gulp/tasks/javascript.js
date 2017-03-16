@@ -27,11 +27,15 @@ var browserSync = require('browser-sync');
 var banner = [
 	'/**',
 	' <%= pkg.name %>' +
-	' @author <%= pkg.author %>' +
+	' @author <%= pkg.maintainers.name %>' +
 	' @version v<%= pkg.version %>' +
 	'External lib: ' +
-	// ' jQuery Placeholder Plugin v2.3.1  https://github.com/mathiasbynens/jquery-placeholder Copyright 2011, 2015 Mathias Bynens Released under the MIT license' +
-	// ' FastClick: polyfill to remove click delays on browsers with touch UIs. The Financial Times Limited [All Rights Reserved] MIT License' +
+	' jQuery Placeholder Plugin v2.3.1  https://github.com/mathiasbynens/jquery-placeholder Copyright 2011, 2015 Mathias Bynens Released under the MIT license' +
+	' FastClick: polyfill to remove click delays on browsers with touch UIs. The Financial Times Limited [All Rights Reserved] MIT License' +
+	' jQuery Form Styler https://github.com/Dimox/jQueryFormStyler Copyright 2012-2017 Dimox (http://dimox.name/) Released under the MIT license.' +
+	//' Sticky-kit v1.1.3 | MIT | Leaf Corcoran 2015 | http://leafo.net' +
+	' jquery.mask.js v1.14.10 Igor Escobar' +
+	' Magnific Popup - v1.1.0 - 2016-02-20 http://dimsemenov.com/plugins/magnific-popup/ Copyright (c) 2016 Dmitry Semenov;' +
 	' **/'
 ].join('\n');
 
@@ -40,8 +44,13 @@ gulp.task('js', function () {
 	'use strict';
 	// Перечесление в нужном порядке файлов которые нужно объеденить
 	return gulp.src([
-		// 'source/js/lib/jquery.placeholder.js',
-		// 'source/js/lib/fastclick.js',
+		'source/js/lib/jquery.placeholder.js',
+		'source/js/lib/fastclick.js',
+		'source/js/lib/float-label.js',
+		'source/js/lib/jquery.formstyler.js',
+		//'source/js/lib/sticky-kit.js',
+		'source/js/lib/jquery.mask.js',
+		'source/js/lib/popup.js',
 		'source/js/main.js'
 		])
 		// Объеденяем в файл app.js

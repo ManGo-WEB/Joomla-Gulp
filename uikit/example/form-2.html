@@ -1,0 +1,55 @@
+<form action="index.html" class="b-form">
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-name-float">Вашe имя</label>
+			<input type="text" id="form-name-float">
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-password-float">Ваш пароль</label>
+			<input type="password" id="form-password-float" value="password">
+		</div>
+		<!-- Блок ошибки -->
+		<div class="b-form__error">
+			Обязательное поле
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row label-float">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-password2-float">Подтвердите ваш пароль</label>
+			<input type="password" id="form-password2-float" value="pass" class="error">
+		</div>
+		<!-- Блок ошибки тип 2 -->
+		<div class="b-form__error type-2">
+			Обязательное поле тип 2
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-text-float">Ваше сообщение</label>
+			<textarea name="form-text" id="form-text-float" cols="30" rows="10"></textarea>
+		</div>
+		<!-- Блок описания -->
+		<div class="b-form__hint">
+			Описание поля
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<button type="submit" class="b-btn red">
+			Отправить
+		</button>
+		<button type="reset" class="b-btn link">
+			Отменить
+		</button>
+	</div>
+</form>

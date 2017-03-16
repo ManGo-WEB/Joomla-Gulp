@@ -45,7 +45,6 @@
 	"gulp-svg-sprite"        : "*",
 	"gulp-uglify"            : "*",
 	"gulp-watch"             : "*",
-	"gulp-wait"              : "*",
 	"gulp.spritesmith"       : "*",
 	"postcss-flexbugs-fixes" : "*",
 	"postcss-gradientfixer"  : "*",

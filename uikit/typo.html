@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>UIKit</title>
+	<link rel="stylesheet" href="../css/app.css">
+	<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../js/app.min.js"></script>
+	<!-- Demo стили -->
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<script src="js/prism.js"></script>
+	<script src="js/demo.js"></script>
+</head>
+<body>
+<header class="demo-header">
+	<div class="wrapper">
+		<a href="/" class="demo-logo">
+			UIKit
+		</a>
+		<h1 class="demo-header__title">
+			Типографика
+		</h1>
+	</div>
+</header>
+<div class="wrapper">
+	<nav class="demo-aside">
+		<ul>
+			<li>
+				<a href="/">Формы</a>
+			</li>
+			<li>
+				<a href="grid.html">Сетка</a>
+			</li>
+			<li class="active">
+				<a href="typo.html">Типографика</a>
+				<ul>
+					<li>
+						<a href="#link-typo">Текст</a>
+					</li>
+					<li>
+						<a href="#link-hero">Выделенный блок</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="404.html">404 страница</a>
+			</li>
+			<li>
+				<a href="components.html">Компоненты</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="demo-main">
+		<div class="demo-row" id="link-typo">
+			<h2 class="demo-title">
+				Типографика
+			</h2>
+			<div class="demo-info">
+				<p>
+					Конфиг:
+				</p>
+				<p>
+					<code>source/sass/helpers/_config-main.scss</code>
+				</p>
+				<p>
+					Cтили:
+				</p>
+				<p>
+					<code>source/sass/helpers/_normalize.scss</code>
+				</p>
+				<p>
+					<code>source/sass/helpers/_typography.scss</code>
+				</p>
+			</div>
+			<div class="demo-test">
+				<h1>H1. Заголовок доступно поясняет содержание</h1>
+				<p>
+					<img src="images/placeholder.jpg" alt="">
+				</p>
+				<p>
+					Теорема Гаусса - Остроградского усиливает натуральный логарифм. Функция многих переменных,
+					следовательно, оправдывает двойной интеграл, что несомненно приведет нас к истине. В общем, частная
+					производная переворачивает интеграл от функции, обращающейся в бесконечность в изолированной точке.
+				</p>
+				<p>
+					Очевидно проверяется, что дифференциальное исчисление охватывает стремящийся криволинейный интеграл.
+					Детерминант, в первом приближении, стабилизирует стремящийся предел последовательности. Однако не
+					все знают, что лемма вырождена.
+				</p>
+				<h2>H2. Заголовок доступно поясняет содержание страницы</h2>
+				<p>
+					Теорема Гаусса - Остроградского усиливает натуральный логарифм. Функция многих переменных,
+					следовательно, оправдывает двойной интеграл, что несомненно приведет нас к истине. В общем, частная
+					производная переворачивает интеграл от функции, обращающейся в бесконечность в изолированной точке.
+				</p>
+				<h3>H3. Заголовок доступно поясняет содержание страницы</h3>
+				<p>
+					Теорема Гаусса - Остроградского усиливает натуральный логарифм. Функция многих переменных,
+					следовательно, оправдывает двойной интеграл, что несомненно приведет нас к истине. В общем, частная
+					производная переворачивает интеграл от функции, обращающейся в бесконечность в изолированной точке.
+				</p>
+				<hr>
+				<h3>Маркированный список</h3>
+				<ul>
+					<li>Слушать бесплатно и легально</li>
+					<li>Картина дня, созданная автоматически</li>
+					<li>Энциклопедии и справочники, иностранные языки</li>
+					<li>Выбор автомобиля и поиск по объявлениям</li>
+				</ul>
+				<p>
+					<a href="#" class="b-back-link">
+						← <span>Вернуться назад</span>
+					</a>
+				</p>
+				<div class="demo-code">
+					<p>
+						<a href="#" class="demo-code__link">Показать код</a>
+					</p>
+					<div class="demo-code__wrapper">
+						<pre data-src="example/typo.html" data-start="1" data-type="text/html"></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="demo-row" id="link-hero">
+			<h2 class="demo-title">
+				Выделенный блок
+			</h2>
+
+			<div class="b-hero-block">
+				<h2>H2. Заголовок доступно поясняет содержание страницы</h2>
+				<p>
+					Теорема Гаусса - Остроградского усиливает натуральный логарифм. Функция многих переменных,
+					следовательно, оправдывает двойной интеграл, что несомненно приведет нас к истине. В общем, частная
+					производная переворачивает интеграл от функции, обращающейся в бесконечность в изолированной точке.
+				</p>
+				<h3>H3. Заголовок доступно поясняет содержание страницы</h3>
+				<p>
+					Теорема Гаусса - Остроградского усиливает натуральный логарифм. Функция многих переменных,
+					следовательно, оправдывает двойной интеграл, что несомненно приведет нас к истине. В общем, частная
+					производная переворачивает интеграл от функции, обращающейся в бесконечность в изолированной точке.
+				</p>
+				<p>
+					<a href="#" class="b-back-link">
+						← <span>Вернуться назад</span>
+					</a>
+				</p>
+			</div>
+
+			<div class="demo-code">
+				<p>
+					<a href="#" class="demo-code__link">Показать код</a>
+				</p>
+				<div class="demo-code__wrapper">
+					<pre data-src="example/typo-2.html" data-start="1" data-type="text/html"></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

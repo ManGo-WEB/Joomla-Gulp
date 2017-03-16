@@ -1,0 +1,250 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$checkbox-name: 'checkbox';
+$checkbox-x: 0px;
+$checkbox-y: 72px;
+$checkbox-offset-x: 0px;
+$checkbox-offset-y: -72px;
+$checkbox-width: 14px;
+$checkbox-height: 11px;
+$checkbox-total-width: 104px;
+$checkbox-total-height: 83px;
+$checkbox-image: '../images/sprite.png';
+$checkbox: (0px, 72px, 0px, -72px, 14px, 11px, 104px, 83px, '../images/sprite.png', 'checkbox', );
+$dark-checkbox-name: 'dark-checkbox';
+$dark-checkbox-x: 44px;
+$dark-checkbox-y: 48px;
+$dark-checkbox-offset-x: -44px;
+$dark-checkbox-offset-y: -48px;
+$dark-checkbox-width: 14px;
+$dark-checkbox-height: 11px;
+$dark-checkbox-total-width: 104px;
+$dark-checkbox-total-height: 83px;
+$dark-checkbox-image: '../images/sprite.png';
+$dark-checkbox: (44px, 48px, -44px, -48px, 14px, 11px, 104px, 83px, '../images/sprite.png', 'dark-checkbox', );
+$fb-name: 'fb';
+$fb-x: 94px;
+$fb-y: 25px;
+$fb-offset-x: -94px;
+$fb-offset-y: -25px;
+$fb-width: 10px;
+$fb-height: 20px;
+$fb-total-width: 104px;
+$fb-total-height: 83px;
+$fb-image: '../images/sprite.png';
+$fb: (94px, 25px, -94px, -25px, 10px, 20px, 104px, 83px, '../images/sprite.png', 'fb', );
+$google-plus-name: 'google-plus';
+$google-plus-x: 50px;
+$google-plus-y: 23px;
+$google-plus-offset-x: -50px;
+$google-plus-offset-y: -23px;
+$google-plus-width: 19px;
+$google-plus-height: 19px;
+$google-plus-total-width: 104px;
+$google-plus-total-height: 83px;
+$google-plus-image: '../images/sprite.png';
+$google-plus: (50px, 23px, -50px, -23px, 19px, 19px, 104px, 83px, '../images/sprite.png', 'google-plus', );
+$instagram-name: 'instagram';
+$instagram-x: 0px;
+$instagram-y: 0px;
+$instagram-offset-x: 0px;
+$instagram-offset-y: 0px;
+$instagram-width: 20px;
+$instagram-height: 20px;
+$instagram-total-width: 104px;
+$instagram-total-height: 83px;
+$instagram-image: '../images/sprite.png';
+$instagram: (0px, 0px, 0px, 0px, 20px, 20px, 104px, 83px, '../images/sprite.png', 'instagram', );
+$odnoklassniki-name: 'odnoklassniki';
+$odnoklassniki-x: 76px;
+$odnoklassniki-y: 0px;
+$odnoklassniki-offset-x: -76px;
+$odnoklassniki-offset-y: 0px;
+$odnoklassniki-width: 13px;
+$odnoklassniki-height: 21px;
+$odnoklassniki-total-width: 104px;
+$odnoklassniki-total-height: 83px;
+$odnoklassniki-image: '../images/sprite.png';
+$odnoklassniki: (76px, 0px, -76px, 0px, 13px, 21px, 104px, 83px, '../images/sprite.png', 'odnoklassniki', );
+$select-dropdown-name: 'select-dropdown';
+$select-dropdown-x: 19px;
+$select-dropdown-y: 72px;
+$select-dropdown-offset-x: -19px;
+$select-dropdown-offset-y: -72px;
+$select-dropdown-width: 14px;
+$select-dropdown-height: 5px;
+$select-dropdown-total-width: 104px;
+$select-dropdown-total-height: 83px;
+$select-dropdown-image: '../images/sprite.png';
+$select-dropdown: (19px, 72px, -19px, -72px, 14px, 5px, 104px, 83px, '../images/sprite.png', 'select-dropdown', );
+$twitter-name: 'twitter';
+$twitter-x: 0px;
+$twitter-y: 25px;
+$twitter-offset-x: 0px;
+$twitter-offset-y: -25px;
+$twitter-width: 21px;
+$twitter-height: 18px;
+$twitter-total-width: 104px;
+$twitter-total-height: 83px;
+$twitter-image: '../images/sprite.png';
+$twitter: (0px, 25px, 0px, -25px, 21px, 18px, 104px, 83px, '../images/sprite.png', 'twitter', );
+$vk-name: 'vk';
+$vk-x: 26px;
+$vk-y: 25px;
+$vk-offset-x: -26px;
+$vk-offset-y: -25px;
+$vk-width: 15px;
+$vk-height: 18px;
+$vk-total-width: 104px;
+$vk-total-height: 83px;
+$vk-image: '../images/sprite.png';
+$vk: (26px, 25px, -26px, -25px, 15px, 18px, 104px, 83px, '../images/sprite.png', 'vk', );
+$white-fb-name: 'white-fb';
+$white-fb-x: 94px;
+$white-fb-y: 0px;
+$white-fb-offset-x: -94px;
+$white-fb-offset-y: 0px;
+$white-fb-width: 10px;
+$white-fb-height: 20px;
+$white-fb-total-width: 104px;
+$white-fb-total-height: 83px;
+$white-fb-image: '../images/sprite.png';
+$white-fb: (94px, 0px, -94px, 0px, 10px, 20px, 104px, 83px, '../images/sprite.png', 'white-fb', );
+$white-google-plus-name: 'white-google-plus';
+$white-google-plus-x: 0px;
+$white-google-plus-y: 48px;
+$white-google-plus-offset-x: 0px;
+$white-google-plus-offset-y: -48px;
+$white-google-plus-width: 19px;
+$white-google-plus-height: 19px;
+$white-google-plus-total-width: 104px;
+$white-google-plus-total-height: 83px;
+$white-google-plus-image: '../images/sprite.png';
+$white-google-plus: (0px, 48px, 0px, -48px, 19px, 19px, 104px, 83px, '../images/sprite.png', 'white-google-plus', );
+$white-instagram-name: 'white-instagram';
+$white-instagram-x: 25px;
+$white-instagram-y: 0px;
+$white-instagram-offset-x: -25px;
+$white-instagram-offset-y: 0px;
+$white-instagram-width: 20px;
+$white-instagram-height: 20px;
+$white-instagram-total-width: 104px;
+$white-instagram-total-height: 83px;
+$white-instagram-image: '../images/sprite.png';
+$white-instagram: (25px, 0px, -25px, 0px, 20px, 20px, 104px, 83px, '../images/sprite.png', 'white-instagram', );
+$white-odnoklassniki-name: 'white-odnoklassniki';
+$white-odnoklassniki-x: 76px;
+$white-odnoklassniki-y: 26px;
+$white-odnoklassniki-offset-x: -76px;
+$white-odnoklassniki-offset-y: -26px;
+$white-odnoklassniki-width: 13px;
+$white-odnoklassniki-height: 21px;
+$white-odnoklassniki-total-width: 104px;
+$white-odnoklassniki-total-height: 83px;
+$white-odnoklassniki-image: '../images/sprite.png';
+$white-odnoklassniki: (76px, 26px, -76px, -26px, 13px, 21px, 104px, 83px, '../images/sprite.png', 'white-odnoklassniki', );
+$white-twitter-name: 'white-twitter';
+$white-twitter-x: 50px;
+$white-twitter-y: 0px;
+$white-twitter-offset-x: -50px;
+$white-twitter-offset-y: 0px;
+$white-twitter-width: 21px;
+$white-twitter-height: 18px;
+$white-twitter-total-width: 104px;
+$white-twitter-total-height: 83px;
+$white-twitter-image: '../images/sprite.png';
+$white-twitter: (50px, 0px, -50px, 0px, 21px, 18px, 104px, 83px, '../images/sprite.png', 'white-twitter', );
+$white-vk-name: 'white-vk';
+$white-vk-x: 24px;
+$white-vk-y: 48px;
+$white-vk-offset-x: -24px;
+$white-vk-offset-y: -48px;
+$white-vk-width: 15px;
+$white-vk-height: 18px;
+$white-vk-total-width: 104px;
+$white-vk-total-height: 83px;
+$white-vk-image: '../images/sprite.png';
+$white-vk: (24px, 48px, -24px, -48px, 15px, 18px, 104px, 83px, '../images/sprite.png', 'white-vk', );
+$spritesheet-width: 104px;
+$spritesheet-height: 83px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($checkbox, $dark-checkbox, $fb, $google-plus, $instagram, $odnoklassniki, $select-dropdown, $twitter, $vk, $white-fb, $white-google-plus, $white-instagram, $white-odnoklassniki, $white-twitter, $white-vk, );
+$spritesheet: (104px, 83px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

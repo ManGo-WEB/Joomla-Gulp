@@ -1,0 +1,34 @@
+<form action="index.html" class="b-form" data-validation="type2">
+	<!-- Блок для отображения сообщения -->
+	<div class="b-form__error-placeholder"></div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-name">Вашe имя</label>
+		<input type="text" id="form-name" data-rule-minlength="10" data-rule-required="true"
+		       data-msg-minlength="Введите больше 10 знаков"
+		       data-msg-required="Пожалуйста введите ваше имя." required>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-email">Ваш пароль</label>
+		<!-- Блок ошибки -->
+		<input type="email" id="form-email"  data-rule-email="true"
+		       data-rule-required="true" data-msg-email="Пожалуйста заполните email корректно."
+		       required>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<label for="form-text">Ваше сообщение</label>
+		<textarea name="form-text" id="form-text" cols="30" rows="10" data-rule-required="true" data-msg-required="Пожалуйста заполните сообщение."
+		          required></textarea>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<button type="submit" class="b-btn red">
+			Отправить
+		</button>
+		<button type="reset" class="b-btn link">
+			Отменить
+		</button>
+	</div>
+</form>

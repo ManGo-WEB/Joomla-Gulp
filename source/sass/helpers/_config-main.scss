@@ -1,27 +1,45 @@
 // Variables
 // ---------
-// Color
+$body-font-size : 16px;
+$body-line-height: 1.4;
+$body-color : #464646;
+$body-background : #FFF;
+
 
 // Table
 $table-header-font-weight : 700;
 $table-cell-padding : 5px 10px;
 
 // Text
-$main : #464646;
-$red : #FF5F28;
 $heading-font-weight : 700;
 $heading-line-height : 1.2;
 $heading-margin : 0 0 1em;
-$paragraph-margin : 0 0 2em;
+$paragraph-margin : 0 0 1em;
 $list-margin : 1em 0;
-$h1 : 32px;
+$h1 : 28px;
 $h2 : 24px;
 $h3 : 20px;
-$h4 : 16px;
-$h5 : 14px;
-$link-color : #009EB5;
-$link-color-hover : #00839A;
+$h4 : 18px;
+$h5 : 16px;
 $bold-font-weight : 700;
 $space-1 : 1em;
 $space-2 : 2em;
 $space-3 : 3em;
+$text-small : 14px;
+
+// List
+$list-color : #E81313;
+$list-size : 6px;
+
+// Hero Block
+$body-color : #444;
+$body-background : #FFF;
+$body-padding : 25px;
+$body-shadow : 0 0 7px rgba(22, 22, 22, 0.25);
+$body-radius : 0px;
+
+// Color
+$main : $body-color;
+$red : #E81313;
+$link-color : #009EB5;
+$link-color-hover : #00839A;

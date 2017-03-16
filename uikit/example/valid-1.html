@@ -1,0 +1,39 @@
+<form action="components.html" class="b-form" data-validation="type1">
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-name-float">Вашe имя</label>
+			<input type="text" id="form-name-float" data-rule-minlength="10" data-rule-required="true" data-msg-minlength="Введите больше 10 знаков" data-msg-required="Пожалуйста введите ваше имя." required>
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-password-float">Ваш email</label>
+			<input type="email" id="form-password-float" data-rule-email="true" data-rule-required="true" data-msg-email="Пожалуйста заполните email корректно." required>
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<!-- Контейнер для плавающего лейбла -->
+		<div class="b-form__float-label">
+			<label for="form-text-float">Ваше сообщение</label>
+			<textarea name="form-text" id="form-text-float" cols="30" rows="10" data-rule-required="true" data-msg-required="Пожалуйста заполните сообщение." required></textarea>
+		</div>
+		<!-- Блок описания -->
+		<div class="b-form__hint">
+			Описание поля
+		</div>
+	</div>
+	<!-- Строка формы -->
+	<div class="b-form__row">
+		<button type="submit" class="b-btn red">
+			Отправить
+		</button>
+		<button type="reset" class="b-btn link">
+			Отменить
+		</button>
+	</div>
+</form>

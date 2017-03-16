@@ -1,0 +1,12 @@
+.lazy {
+	display : none;
+}
+
+.lazy-hidden {
+	opacity : 0;
+}
+
+.lazy-loaded {
+	transition : opacity 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+	opacity    : 1;
+}

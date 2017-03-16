@@ -1,0 +1,21 @@
+<!-- Ссылка на модальное окно -->
+<a href="#modal-text" data-lightbox="inline">Открыть инлайн окно</a>
+<!-- hidden-box скрывает все внутри себя -->
+<div class="hidden-box">
+	<!-- контент модального окна -->
+	<div id="modal-text">
+		<form action="components.html" class="b-form" data-validation="type-2">
+			<div class="b-form__row">
+				<label for="test-name">Ваше имя</label>
+				<input type="text" id="test-name" class="big" required>
+			</div>
+			<div class="b-form__row">
+				<label for="test-phone">Ваш телефон</label>
+				<input type="text" id="test-phone" class="big phone-mask" required>
+			</div>
+			<div class="b-form__row">
+				<button type="submit" class="b-btn red big full-size">Отправить</button>
+			</div>
+		</form>
+	</div>
+</div>
