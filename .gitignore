@@ -34,3 +34,4 @@ node_modules
 .sass-cache/
 *.css.map
 css/app.css
+*.zip
