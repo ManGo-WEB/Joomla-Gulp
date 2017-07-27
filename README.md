@@ -2,7 +2,7 @@
 
 ## Начало работы
 
- 1. Установить [Node.js](https://nodejs.org/en/) последнюю версию
+ 1. Установить [Node.js](https://nodejs.org/en/) последнюю LTS версию 
  2.  Установить [gulpjs](http://gulpjs.com/)
  `npm install --g gulp` и [browsersync](http://browsersync.io) `npm install -g browser-sync`
  3. В консоли перейти в директорию с проектом с помощью команды `cd путь/до/шаблона`
