@@ -2,12 +2,13 @@
 
 ## Начало работы
 
- 1. Установить [Node.js](https://nodejs.org/en/) последнюю LTS версию 
- 2.  Установить [gulpjs](http://gulpjs.com/)
- `npm install --g gulp` и [browsersync](http://browsersync.io) `npm install -g browser-sync`
- 3. В консоли перейти в директорию с проектом с помощью команды `cd путь/до/шаблона`
- 4. Запустить команду `npm install --save-dev`
- 5. После этого можно запустить дефолтную задачу командой `gulp` (в директории с шаблоном)
+ 1. Установить [Node.js](https://nodejs.org/en/) последнюю LTS версию '
+ 2. Обновить npm `npm install -g npm`
+ 3.  Установить [gulpjs](http://gulpjs.com/)
+ `npm install -g gulp` и [browsersync](http://browsersync.io) `npm install -g browser-sync`
+ 4. В консоли перейти в директорию с проектом с помощью команды `cd путь/до/шаблона`
+ 5. Запустить команду `npm install --save-dev`
+ 6. После этого можно запустить дефолтную задачу командой `gulp` (в директории с шаблоном)
 
 ## Задачи
 
